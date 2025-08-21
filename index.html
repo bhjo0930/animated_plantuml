@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animated PlantUML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Interactive Animated PlantUML</h1>
+            <p>PlantUML 텍스트를 입력하여 상호작용 가능한 다이어그램을 생성하세요</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-panel">
+                <h3>📝 PlantUML 입력</h3>
+                <textarea id="plantuml-input" placeholder="@startuml
+Alice -> Bob: 안녕하세요
+Bob -> Charlie: 메시지 전달
+Charlie -> Alice: 응답
+@enduml">@startuml
+Alice -> Bob: 안녕하세요
+Bob -> Charlie: 메시지 전달
+Charlie -> Alice: 응답
+@enduml</textarea>
+                
+                <div class="sample-selector">
+                    <label for="sample-select">📋 샘플 선택:</label>
+                    <select id="sample-select">
+                        <option value="default">기본 - 마이크로서비스</option>
+                        <option value="simple">간단 - 기본 메시징</option>
+                        <option value="ecommerce">전자상거래 - 주문 프로세스</option>
+                        <option value="microservice">마이크로서비스 아키텍처</option>
+                    </select>
+                    <button id="load-sample-btn" class="btn btn-small">📥 불러오기</button>
+                </div>
+
+                <div class="controls">
+                    <button id="generate-btn" class="btn btn-primary">📊 다이어그램 생성</button>
+                    <button id="animate-btn" class="btn btn-secondary">▶️ 흐름 애니메이션</button>
+                    <button id="reset-btn" class="btn btn-tertiary">🔄 리셋</button>
+                </div>
+
+                <div class="animation-controls">
+                    <label for="animation-speed">⚡ 애니메이션 속도:</label>
+                    <input type="range" id="animation-speed" min="0.5" max="3" step="0.1" value="1">
+                    <span id="speed-value">1.0x</span>
+                </div>
+
+                <div class="advanced-controls">
+                    <label>
+                        <input type="checkbox" id="show-labels" checked>
+                        🏷️ 연결선 라벨 표시
+                    </label>
+                    <label>
+                        <input type="checkbox" id="auto-animate" checked>
+                        🔁 자동 애니메이션
+                    </label>
+                    <label>
+                        <input type="checkbox" id="sound-effects">
+                        🔊 효과음 (개발 중)
+                    </label>
+                </div>
+            </div>
+
+            <div class="canvas-panel">
+                <h3>🎨 인터랙티브 캔버스</h3>
+                <div id="canvas-container">
+                    <svg id="diagram-canvas" viewBox="0 0 800 600">
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                    refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#415E72"/>
+                            </marker>
+                            <marker id="arrowhead-active" markerWidth="10" markerHeight="7" 
+                                    refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#C5B0CD"/>
+                            </marker>
+                        </defs>
+                        <g id="connections"></g>
+                        <g id="objects"></g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>ℹ️ 사용법</h3>
+            <ul>
+                <li>🖱️ 객체를 드래그하여 위치 조정</li>
+                <li>🎯 객체 클릭 시 흐름 애니메이션 시작</li>
+                <li>🔗 화살표를 따라 연결된 노드들이 순차적으로 하이라이트</li>
+                <li>⚡ 애니메이션 속도 조절 가능</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="plantuml-parser.js"></script>
+    <script src="canvas-engine.js"></script>
+    <script src="animation-system.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

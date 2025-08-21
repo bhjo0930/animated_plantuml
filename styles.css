@@ -1,0 +1,458 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    color: #17313E;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: #17313E;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #F3E2D4 0%, #C5B0CD 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(65, 94, 114, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #17313E;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #415E72;
+    font-weight: 500;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Input Panel */
+.input-panel {
+    background: #F3E2D4;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(65, 94, 114, 0.15);
+    border: 1px solid rgba(197, 176, 205, 0.3);
+}
+
+.input-panel h3 {
+    color: #17313E;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#plantuml-input {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #C5B0CD;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    background: white;
+    color: #17313E;
+    transition: border-color 0.3s ease;
+}
+
+#plantuml-input:focus {
+    outline: none;
+    border-color: #415E72;
+    box-shadow: 0 0 0 3px rgba(65, 94, 114, 0.1);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #415E72;
+    color: white;
+    border: 1px solid #17313E;
+}
+
+.btn-secondary {
+    background: #C5B0CD;
+    color: white;
+    border: 1px solid #415E72;
+}
+
+.btn-tertiary {
+    background: #F3E2D4;
+    color: #17313E;
+    border: 1px solid #C5B0CD;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(65, 94, 114, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Sample Selector */
+.sample-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(197, 176, 205, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(197, 176, 205, 0.5);
+}
+
+.sample-selector label {
+    font-weight: 600;
+    color: #17313E;
+    white-space: nowrap;
+}
+
+#sample-select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #C5B0CD;
+    border-radius: 6px;
+    background: white;
+    font-size: 14px;
+    color: #17313E;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 6px;
+    background: #C5B0CD;
+    color: white;
+    border: 1px solid #415E72;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+    background: #415E72;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(65, 94, 114, 0.3);
+}
+
+/* Animation Controls */
+.animation-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(243, 226, 212, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(197, 176, 205, 0.5);
+}
+
+.animation-controls label {
+    font-weight: 600;
+    color: #17313E;
+    white-space: nowrap;
+}
+
+#animation-speed {
+    flex: 1;
+    max-width: 150px;
+    margin: 0 10px;
+    accent-color: #415E72;
+}
+
+#speed-value {
+    font-weight: 600;
+    color: #415E72;
+    min-width: 50px;
+}
+
+/* Advanced Controls */
+.advanced-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(197, 176, 205, 0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(197, 176, 205, 0.5);
+}
+
+.advanced-controls label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #17313E;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.advanced-controls label:hover {
+    color: #415E72;
+}
+
+.advanced-controls input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #415E72;
+    cursor: pointer;
+}
+
+/* Canvas Panel */
+.canvas-panel {
+    background: #F3E2D4;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(65, 94, 114, 0.15);
+    border: 1px solid rgba(197, 176, 205, 0.3);
+}
+
+.canvas-panel h3 {
+    color: #17313E;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#canvas-container {
+    border: 2px solid #C5B0CD;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 8px rgba(65, 94, 114, 0.1);
+}
+
+#diagram-canvas {
+    width: 100%;
+    height: 500px;
+    background: white;
+    cursor: default;
+}
+
+/* SVG Objects */
+.uml-object {
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.uml-object:hover .object-rect {
+    stroke-width: 3 !important;
+    stroke: #415E72 !important;
+}
+
+.uml-object.selected .object-rect {
+    stroke-width: 4 !important;
+    stroke: #C5B0CD !important;
+    fill: rgba(197, 176, 205, 0.1) !important;
+}
+
+.uml-object.highlighted .object-rect {
+    stroke-width: 4 !important;
+    stroke: #415E72 !important;
+    fill: rgba(65, 94, 114, 0.1) !important;
+    animation: pulse 0.5s ease-in-out;
+}
+
+.uml-object.focused .object-rect {
+    stroke-width: 3 !important;
+    stroke: #17313E !important;
+    fill: rgba(23, 49, 62, 0.05) !important;
+    stroke-dasharray: 3,3 !important;
+    animation: focus-pulse 1s ease-in-out infinite;
+}
+
+.object-rect {
+    fill: white;
+    stroke: #415E72;
+    stroke-width: 2;
+    rx: 8;
+    ry: 8;
+}
+
+.object-text {
+    fill: #17313E;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+}
+
+/* Connections */
+.connection-line {
+    stroke: #415E72 !important;
+    stroke-width: 2 !important;
+    fill: none !important;
+    marker-end: url(#arrowhead);
+    transition: all 0.3s ease;
+}
+
+.connection-line.active {
+    stroke: #C5B0CD !important;
+    stroke-width: 4 !important;
+    marker-end: url(#arrowhead-active) !important;
+    animation: flow 1s ease-in-out;
+}
+
+.connection-label {
+    fill: #17313E;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: central;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Info Panel */
+.info-panel {
+    background: rgba(243, 226, 212, 0.5);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(65, 94, 114, 0.15);
+    border: 1px solid rgba(197, 176, 205, 0.3);
+    margin-top: 20px;
+}
+
+.info-panel h3 {
+    color: #17313E;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.info-panel ul {
+    list-style: none;
+}
+
+.info-panel li {
+    padding: 8px 0;
+    color: #415E72;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flow {
+    0% { 
+        stroke-dasharray: 0, 1000;
+        stroke-dashoffset: 0;
+    }
+    100% { 
+        stroke-dasharray: 1000, 0;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes focus-pulse {
+    0% { 
+        stroke-opacity: 1;
+        stroke-width: 3;
+    }
+    50% { 
+        stroke-opacity: 0.6;
+        stroke-width: 4;
+    }
+    100% { 
+        stroke-opacity: 1;
+        stroke-width: 3;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .input-panel, .canvas-panel {
+        padding: 20px;
+    }
+    
+    #diagram-canvas {
+        height: 400px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .btn {
+        justify-content: center;
+    }
+}
